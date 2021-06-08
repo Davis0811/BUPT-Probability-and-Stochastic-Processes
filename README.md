@@ -3,6 +3,7 @@
 ## 简介
 
 [![Build Probability and Stochastic Processes PDF](https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes/actions/workflows/main.yml/badge.svg)](https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes/actions/workflows/main.yml)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/itdevwu/BUPT-Probability-and-Stochastic-Processes)](https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes/releases/latest)
 
 “概率论与随机过程”是北京邮电大学计算机类学生在大二秋季学期的“二选一”课程之一。这门课程对于数据科学、深度学习等方向的后续学习都十分重要。
 
@@ -18,7 +19,7 @@
 
 GitHub Actions 提供了极为方便的持续集成服务。它会自动在每次 push 时，编译生成新的```.pdf```文件，并将之纳入一个新的 release。
 
-您可以在**[下载](https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes/releases/latest)**处直接下载最新的```.pdf```文件。
+您可以在 [releases](https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes/releases/latest) 处直接下载最新的```.pdf```文件。
 
 ### 手动编译
 
@@ -31,6 +32,10 @@ git clone https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes.g
 采用 XeLaTeX 编译器和 CTeX 宏包进行编译，获得编译后```.pdf```文件。
 
 LaTeX 教程可参考[一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)，CTeX 宏包文档详见 [CTeX 宏集手册](https://mirrors.tuna.tsinghua.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)。
+
+### 查看进度
+
+您可以在 [Milestones](https://github.com/itdevwu/BUPT-Probability-and-Stochastic-Processes/milestones) 处查看本文档的完善进度。
 
 ## 版权声明
 
