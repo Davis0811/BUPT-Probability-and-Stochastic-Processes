@@ -1,0 +1,31 @@
+name: Build Probability and Stochastic Processes PDF
+
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_use_xelatex: true
+          root_file: main.tex
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
+      - name: Run latest-tag
+        uses: EndBug/latest-tag@latest
+        id: latest
+        with:
+          # You can change the name of the tag with this input.
+          # Default: 'latest'
+          tag-name: nightly-${{ steps.date.outputs.date }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: main.pdf
+          tag_name: nightly-${{ steps.date.outputs.date }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
