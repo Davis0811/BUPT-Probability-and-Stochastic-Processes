@@ -49,8 +49,8 @@ Copyright (c) 2021 itdevwu
 
 本文档采用 LaTeX 撰写。这意味着作者在撰写本文档内容的同时还撰写了一份软件源代码，以处理本文档内容的排版、渲染等问题。
 
-“CC-BY-SA 4.0 协议”具有对由[自由软件基金会（Free Software Foundation, Inc）](https://www.fsf.org/)提供的“[GNU GENERAL PUBLIC LICENSE Version 3](https://www.gnu.org/licenses/gpl-3.0.html)”（以下简称“GPLv3协议”）的单向兼容性。这意味着如果您希望在本书的 TeX 代码的基础上进行再创作和分发，您亦可遵循“GPLv3协议”。在中国大陆，由工业和信息化部信息化和软件服务业司指导，挂靠在中国电子技术标准化研究院的[中国开源云联盟（COSCL）](https://www.coscl.org.cn/)，撰写了“[木兰公共许可证，第2版](https://license.coscl.org.cn/MulanPubL-2.0/index.html)”（以下简称“MulanPubL-2.0协议”）。其具有与“GPLv3协议”相似的特性，并对中华人民共和国的法律术语进行了针对性说明。您亦可以根据自己的需要，在本书的 TeX 代码的基础上进行再创作和分发时，选择使用“MulanPubL-2.0协议”进行分发。
+“CC-BY-SA 4.0 协议”具有对由[自由软件基金会（Free Software Foundation, Inc）](https://www.fsf.org/)提供的“[GNU GENERAL PUBLIC LICENSE Version 3](https://www.gnu.org/licenses/gpl-3.0.html)”（以下简称“GPLv3协议”）的单向兼容性。这意味着如果您希望在本书的 TeX 代码的基础上进行再创作和分发，您亦可遵循“GPLv3协议”。
 
-请注意，上述说明基于“CC-BY-SA 4.0 协议”本身的兼容性，不代表本文档的代码采用“GPLv3协议”或“MulanPubL-2.0协议”进行授权或分发。
+请注意，上述说明基于“CC-BY-SA 4.0 协议”本身的兼容性，不代表本文档的代码采用“GPLv3协议”进行授权或分发。
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
