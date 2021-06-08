@@ -1,0 +1,93 @@
+\documentclass[utf8,oneside]{ctexbook} % 中文支持，oneside代表书籍不按奇偶页数分别处理
+\usepackage{amsmath} % 数学公式支持
+\usepackage{fancyhdr} % 页眉页脚支持
+\usepackage{graphicx} % 图片支持
+\usepackage{geometry} % 版面（页边距、纸张大小）设置支持
+\usepackage{hyperref} % 超链接支持
+\usepackage{titling} % maketitle 格式设置支持
+
+% CTeX 宏包设置
+\ctexset {
+    chapter = {
+        % 设置 chapter 的标题格式
+        format = \huge\bfseries\centering,
+        % 设置 chapter 编号的前缀和后缀
+        name = {,.},
+        % 设置 chapter 编号的样式
+        number = \Roman{chapter},
+        % 取消目录分页
+        break = {},
+    },
+    % 设置目录标题
+    contentsname = {},
+}
+
+% maketitle 格式设置
+\pretitle{\centering \Huge \textbf}
+\posttitle{\par \vspace{0.5cm}}
+\preauthor{\centering \Large \textit}
+\postauthor{\par \vspace{0.5cm}}
+\predate{\centering}
+\date{}
+\postdate{
+    % 校名校徽
+    \begin{center}
+        \vspace{6cm}
+        % 校名
+        \includegraphics[width = .43\textwidth]{pic/BUPT/BUPT_name.eps}\\
+        \vspace{1cm}
+        % 校徽
+        \includegraphics[width = .23\textwidth]{pic/BUPT/BUPT_Logo.eps}\\
+    \end{center}
+}
+
+% 基本信息
+\title{概率论与随机过程习题解答}
+\author{计算机学院（国家示范性软件学院）\\吴政隆}
+\date{\today}
+
+% 设置页眉页脚内容
+\pagestyle{fancy}
+\lhead{} \chead{\textit{\thetitle}} \rhead{}
+\lfoot{} \cfoot{\thepage} \rfoot{}
+
+% 设置纸张大小
+\geometry{a4paper}
+
+% 设置页边距
+% \geometry{left=1cm,right=1cm,top=1cm,bottom=1cm}
+
+% 文档内容
+\begin{document}
+
+% 标题
+\maketitle
+
+% Chapter_0 版权声明、前言和目录
+\include{chapters/Chapter_0/Chapter_0.tex}
+
+% Chapter_1 Events and Their Probabilities
+\include{chapters/Chapter_1/Chapter_1.tex}
+
+% Chapter_2 Random Variable
+\include{chapters/Chapter_2/Chapter_2.tex}
+
+% Chapter_3 Random Vectors
+\include{chapters/Chapter_3/Chapter_3.tex}
+
+% Chapter_4 Sequences of Random Variables
+\include{chapters/Chapter_4/Chapter_4.tex}
+
+% Chapter_5 Introduction to Stochastic Processes
+\include{chapters/Chapter_5/Chapter_5.tex}
+
+% Chapter_6 Stationary Processes
+\include{chapters/Chapter_6/Chapter_6.tex}
+
+% Chapter_7 Finite Markov Chains
+\include{chapters/Chapter_7/Chapter_7.tex}
+
+% Chapter_8 Independent-Increment Processes
+\include{chapters/Chapter_8/Chapter_8.tex}
+
+\end{document}
