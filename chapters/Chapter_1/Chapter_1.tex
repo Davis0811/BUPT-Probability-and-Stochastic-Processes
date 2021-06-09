@@ -1,2 +1,53 @@
+% BUPT-Probability-and-Stochastic-Processes (c) by Zhenglong WU(itdevwu)
+
+% BUPT-Probability-and-Stochastic-Processes has a Chinese name "概率论与随机过程习题解答".
+
+% BUPT-Probability-and-Stochastic-Processes is licensed under a
+% Creative Commons Attribution-ShareAlike 4.0 International License.
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
+
 \chapter{Events and Their Probabilities}
 \newpage % 由于此前设置 chapter 标题后不换页，此处换页
+
+\section{Exercises Solution}
+
+\subsection{Experiment, Sample Space and Random Event}
+
+\paragraph{1.1}
+We consider the following random experiment: a fair die is rolled; if (and only if) a 6 is obtained, the die is rolled a second time. How many elementary outcomes are there in the sample space $\Omega$?
+ 
+\solution
+If the first roll obtained $k\in \{1,2,3,4,5\}$, \par
+than the result set would be $\mathbf{A} = \{1,2,3,4,5\}$,\par
+else, there would be a second roll that obviously have 6 results.\par
+Thus, $card(\Omega) = card(\mathbf{A}) + 6 = 11$.
+
+\paragraph{1.2}
+An academic department has just completed voting by secret ballot for a department head. The ballot box contains four slips with votes for candidate A and three slips with votes for candidate B. Suppose that these slips are removed from the box one by one.
+\begin{itemize}
+    \item[(a)] List all possible outcomes.
+    \item[(b)] Suppose that a running tally is kept as slips are removed. For what outcomes does A remain ahead of B throughout the tally?
+\end{itemize}
+
+\solution
+(a) Consider combinations and permutations:\par
+When slips for B are continuous: $C_{5}^{1}$\par
+When 2 of slips for B are continuous and the other is not: $A_{5}^{2}$\par
+When none of slips for B are not continuous: $C_{5}^{3}$\par
+Thus there should be $C_{5}^{1}+A_{5}^{2}+C_{5}^{3} = 5+20+10 = 35$ outcomes:
+\begin{equation*}
+    \begin{split}
+      \{& AAAABBB, AAABABB, AAABBAB, AAABBBA, AABAABB,\\
+        & AABABAB, AABABBA, AABBAAB, AABBABA, AABBBAA,\\
+        & ABAAABB, ABAABAB, ABAABBA, ABABAAB, ABABABA,\\
+        & ABABBAA, ABBAAAB, ABBAABA, ABBABAA, ABBBAAA,\\
+        & BAAAABB, BAAABAB, BAAABBA, BAABAAB, BAABABA,\\
+        & BAABBAA, BABAAAB, BABAABA, BABABAA, BABBAAA,\\
+        & BBAAAAB, BBAAABA, BBAABAA, BBABAAA, BBBAAAA\}
+    \end{split}
+\end{equation*}\par
+
+(b)
+$\{AAAABBB, AAABBAB, AABAABB, AABABAB, AABABBA\}$
