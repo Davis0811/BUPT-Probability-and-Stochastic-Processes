@@ -8,12 +8,13 @@
 % You should have received a copy of the license along with this
 % work. If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 \documentclass[utf8,oneside]{ctexbook} % 中文支持，oneside代表书籍不按奇偶页数分别处理
+\usepackage[pdftitle={概率论与随机过程习题解答},pdfauthor={吴政隆}]{hyperref} % 超链接支持，指定编译后PDF文件的标题和作者
 \usepackage{amsmath} % 数学公式支持
 \usepackage{fancyhdr} % 页眉页脚支持
 \usepackage{graphicx} % 图片支持
 \usepackage{geometry} % 版面（页边距、纸张大小）设置支持
-\usepackage{hyperref} % 超链接支持
 \usepackage{titling} % maketitle 格式设置支持
+\usepackage{gbt7714} % 中文参考文献宏包
 
 % CTeX 宏包设置
 \ctexset {
@@ -29,6 +30,13 @@
     },
     % 设置目录标题
     contentsname = {},
+}
+
+% 定义展示 CC-BY-SA 4.0 License 的图标，参数为图片宽度
+\newcommand{\ccbysa}[2]{
+    \begin{#1}
+        \includegraphics[width = #2]{pic/CC-BY-SA/BY-SA.eps}
+    \end{#1}
 }
 
 % maketitle 格式设置
@@ -82,6 +90,13 @@
 % 标题
 \maketitle
 
+% 扉页
+\cleardoublepage\thispagestyle{empty}
+\vspace*{6cm}\centerline{\ziju{.6} \large \textit{随机过程随机过}}
+
+% 页码清零
+\setcounter{page}{0}
+
 % Chapter_0 版权声明、前言和目录
 \include{chapters/Chapter_0/Chapter_0.tex}
 
@@ -108,5 +123,12 @@
 
 % Chapter_8 Independent-Increment Processes
 \include{chapters/Chapter_8/Chapter_8.tex}
+
+% 参考文献格式：gbt7714-numerical
+% 参考文献格式遵循国家标准 GB/T 7714-2015
+\bibliographystyle{gbt7714-numerical}
+
+% 参考文献文件
+\bibliography{cited}
 
 \end{document}
