@@ -15,6 +15,7 @@
 
 \subsection{Experiment, Sample Space and Random Event}
 
+% 1.1
 \paragraph{1.1}
 We consider the following random experiment: a fair die is rolled; if (and only if) a 6 is obtained, the die is rolled a second time. How many elementary outcomes are there in the sample space $\Omega$?
  
@@ -24,6 +25,7 @@ than the result set would be $\mathbf{A} = \{1,2,3,4,5\}$,\par
 else, there would be a second roll that obviously have 6 results.\par
 Thus, $card(\Omega) = card(\mathbf{A}) + 6 = 11$.
 
+% 1.2
 \paragraph{1.2}
 An academic department has just completed voting by secret ballot for a department head. The ballot box contains four slips with votes for candidate A and three slips with votes for candidate B. Suppose that these slips are removed from the box one by one.
 \begin{itemize}
@@ -32,10 +34,14 @@ An academic department has just completed voting by secret ballot for a departme
 \end{itemize}
 
 \solution
-(a) Consider combinations and permutations:\par
-When slips for B are continuous: $C_{5}^{1}$\par
-When 2 of slips for B are continuous and the other is not: $A_{5}^{2}$\par
-When none of slips for B are not continuous: $C_{5}^{3}$\par
+(a) Consider combinations and permutations:
+
+When slips for B are continuous: $C_{5}^{1}$.
+
+When 2 of slips for B are continuous and the other is not: $A_{5}^{2}$.
+
+When none of slips for B are not continuous: $C_{5}^{3}$.
+
 Thus there should be $C_{5}^{1}+A_{5}^{2}+C_{5}^{3} = 5+20+10 = 35$ outcomes:
 \begin{equation*}
     \begin{split}
@@ -47,7 +53,113 @@ Thus there should be $C_{5}^{1}+A_{5}^{2}+C_{5}^{3} = 5+20+10 = 35$ outcomes:
         & BAABBAA, BABAAAB, BABAABA, BABABAA, BABBAAA,\\
         & BBAAAAB, BBAAABA, BBAABAA, BBABAAA, BBBAAAA\}
     \end{split}
-\end{equation*}\par
+\end{equation*}
 
 (b)
 $\{AAAABBB, AAABBAB, AABAABB, AABABAB, AABABBA\}$
+
+% 1.3
+\paragraph{1.3}
+From 10 married couples, we want to select a group of people that is not allowed to contain a married couple.
+\begin{itemize}
+    \item[(a)] How many choices are there?
+    \item[(b)] How many choices are there if the group must also consist of 3 men and 3 women?
+\end{itemize}
+
+\solution
+(a)
+
+Select 6 couples out of 10, then select 1 person from each couple.
+
+Thus we have $C_{10}^6 {(C_{2}^1)}^6 = 210 \times 64 = 13440$.
+
+(b)
+
+Firstly we select 6 couples out of 10.
+
+For "lady first", we select 3 couples out of previous 6, then select 1 female from each.
+
+Other couples will be selected to choose male.
+
+Therefore there will be nothing to choose from them.
+
+Thus the answer is $C_{10}^6 C_{6}^3 = 210 \times 20 = 4200$.
+
+% 1.4
+\paragraph{1.4}
+Consider n-digit numbers where each digit is one of the 10 integers $0, 1, \cdots ,9$. How many such numbers are there for which
+\begin{itemize}
+    \item[(a)] no two consecutive digits are equal？
+    \item[(b)] 0 appears as a digit a total of $i$ times $i = 0,\cdots ,n?$
+\end{itemize}
+
+\solution
+(a)
+
+First digit must not be 0 and any digit cannot be the same as the previous one.
+
+Thus the answer is ${(C_9^1)}^{10} = 9^{10} = 3486784401$.
+
+(b)
+
+Consider 0 appears $i$ times:
+
+We select $i$ positions out of 9 for 0, the rest positions can be any digit except 0.
+
+Thus we get $C_9^1 C_9^i (C_{9}^{1})^{9-i} = 9 C_9^i \cdot 9^{9-i} = C_9^i \cdot 9^{10-i}$ as answer.
+
+(Calculation)
+
+We can use Python or other numeric computing methods to calculate such formula.
+
+\textit{\textbf{Note}: There is a possibility that the answer exceeds INT\_MAX during calculation.}
+
+% 1.4的答案，允许在此处或底部浮动
+\begin{table}[hb]
+    \centering
+    \resizebox{.95\textwidth}{!}{
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \textit{\textbf{i}}     & 0          & 1          & 2          & 3         & 4        & 5       & 6      & 7     & 8   & 9 \\ \hline
+            \textit{\textbf{count}} & 3486784401 & 3486784401 & 1549681956 & 401769396 & 66961566 & 7440174 & 551124 & 26244 & 729 & 9 \\ \hline
+        \end{tabular}
+    }
+\end{table}
+
+\paragraph{1.5}
+Let E,F,G be three events. Find expressions for the events that of E, G, F
+\begin{itemize}
+    \item[(a)] only F occurs,
+    \item[(b)] both E and F but not G occur,
+    \item[(c)] at least one event occurs,
+    \item[(d)] at least two events occur,
+    \item[(e)] all three events occur,
+    \item[(f)] none occurs,
+    \item[(g)] at most one occurs,
+    \item[(h)] at most two occur.
+\end{itemize}
+
+\noindent \textit{\textbf{Notation}: Given a set $U$, $B$ is complement of $A$ in U, written $B = A \setminus U = A^C = U - A$.}
+
+\solution
+
+For two events $A, B$, there are:
+
+\begin{center}
+    $A\cup B$ is an event in which A OR B (or both) occur,\\
+    $A\cap B = AB$ is an event in which A AND B occur,\\
+    $A^C$ is an event in which A does not occur.
+\end{center}
+
+\begin{itemize}
+    \item[(a)] $F[(E\cup G)^C]$
+    \item[(b)] $(E\cup F)(G^C)$
+    \item[(c)] $E\cup F\cup G$
+    \item[(d)] $(EF)\cup (EG)\cup (FG)$
+    \item[(e)] $EFG$
+    \item[(f)] $(E\cup F\cup G)^C$
+    \item[(g)] $[(EF)\cup (EG)\cup (FG)]^C$
+    \item[(h)] $(EFG)^C$
+\end{itemize}
+
+\textit{\textbf{Note}: There are relationships between problem (c, d, e) \& problem (f, g, h).}
