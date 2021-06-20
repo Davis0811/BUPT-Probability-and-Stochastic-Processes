@@ -10,11 +10,14 @@
 \documentclass[utf8,oneside]{ctexbook} % 中文支持，oneside代表书籍不按奇偶页数分别处理
 \usepackage[pdftitle={概率论与随机过程习题解答},pdfauthor={吴政隆}]{hyperref} % 超链接支持，指定编译后PDF文件的标题和作者
 \usepackage{amsmath} % 数学公式支持
+\usepackage{amssymb} % 扩展数学符号支持
+\usepackage{amsthm} % 数学定理支持
 \usepackage{fancyhdr} % 页眉页脚支持
 \usepackage{graphicx} % 图片支持
 \usepackage{geometry} % 版面（页边距、纸张大小）设置支持
 \usepackage{titling} % maketitle 格式设置支持
-\usepackage{gbt7714} % 中文参考文献宏包
+\usepackage{gbt7714} % 中文国家标准参考文献格式支持
+\usepackage[breakable]{tcolorbox} % 色彩文本框支持，breakable 提供自动断行
 
 % CTeX 宏包设置
 \ctexset {
@@ -74,15 +77,11 @@
 % 设置页边距
 % \geometry{left=1cm,right=1cm,top=1cm,bottom=1cm}
 
-% 定义 Solution 命令并换行
-\newcommand{\solution}{
-    \subparagraph{Solution}~{}\par
-}
+% 定义 Solution 格式
+\newtcolorbox{solution}{breakable,colframe=black!25!white, colback=white, title=Solution}
 
-% 定义 Prove 命令并换行
-\newcommand{\prove}{
-    \subparagraph{Prove}~{}\par
-}
+% 定义 Prove 格式
+\newtcolorbox{prove}{breakable,colframe=black!25!white colback=white, title=Prove}
 
 % 文档内容
 \begin{document}

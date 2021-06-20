@@ -19,11 +19,14 @@
 \paragraph{1.1}
 We consider the following random experiment: a fair die is rolled; if (and only if) a 6 is obtained, the die is rolled a second time. How many elementary outcomes are there in the sample space $\Omega$?
  
-\solution
+\begin{solution}
+
 If the first roll obtained $k\in \{1,2,3,4,5\}$, \par
 than the result set would be $\mathbf{A} = \{1,2,3,4,5\}$,\par
 else, there would be a second roll that obviously have 6 results.\par
 Thus, $card(\Omega) = card(\mathbf{A}) + 6 = 11$.
+
+\end{solution}
 
 % 1.2
 \paragraph{1.2}
@@ -33,10 +36,9 @@ An academic department has just completed voting by secret ballot for a departme
     \item[(b)] Suppose that a running tally is kept as slips are removed. For what outcomes does A remain ahead of B throughout the tally?
 \end{itemize}
 
-\solution
-(a) Consider combinations and permutations:
+\begin{solution}
 
-When slips for B are continuous: $C_{5}^{1}$.
+(a) When slips for B are continuous: $C_{5}^{1}$.
 
 When 2 of slips for B are continuous and the other is not: $A_{5}^{2}$.
 
@@ -58,6 +60,8 @@ Thus there should be $C_{5}^{1}+A_{5}^{2}+C_{5}^{3} = 5+20+10 = 35$ outcomes:
 (b)
 $\{AAAABBB, AAABBAB, AABAABB, AABABAB, AABABBA\}$
 
+\end{solution}
+
 % 1.3
 \paragraph{1.3}
 From 10 married couples, we want to select a group of people that is not allowed to contain a married couple.
@@ -66,7 +70,8 @@ From 10 married couples, we want to select a group of people that is not allowed
     \item[(b)] How many choices are there if the group must also consist of 3 men and 3 women?
 \end{itemize}
 
-\solution
+\begin{solution}
+
 (a)
 
 Select 6 couples out of 10, then select 1 person from each couple.
@@ -85,6 +90,8 @@ Therefore there will be nothing to choose from them.
 
 Thus the answer is $C_{10}^6 C_{6}^3 = 210 \times 20 = 4200$.
 
+\end{solution}
+
 % 1.4
 \paragraph{1.4}
 Consider n-digit numbers where each digit is one of the 10 integers $0, 1, \cdots ,9$. How many such numbers are there for which
@@ -93,16 +100,13 @@ Consider n-digit numbers where each digit is one of the 10 integers $0, 1, \cdot
     \item[(b)] 0 appears as a digit a total of $i$ times $i = 0,\cdots ,n?$
 \end{itemize}
 
-\solution
-(a)
+\begin{solution}
 
-First digit must not be 0 and any digit cannot be the same as the previous one.
+(a) First digit must not be 0 and any digit cannot be the same as the previous one.
 
 Thus the answer is ${(C_9^1)}^{10} = 9^{10} = 3486784401$.
 
-(b)
-
-Consider 0 appears $i$ times:
+(b) Consider 0 appears $i$ times:
 
 We select $i$ positions out of 9 for 0, the rest positions can be any digit except 0.
 
@@ -114,10 +118,12 @@ We can use Python or other numeric computing methods to calculate such formula.
 
 \textit{\textbf{Note}: There is a possibility that the answer exceeds INT\_MAX during calculation.}
 
+\end{solution}
+
 % 1.4的答案，允许在此处或底部浮动
 \begin{table}[hb]
     \centering
-    \resizebox{.95\textwidth}{!}{
+    \resizebox{\textwidth}{!}{
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
             \hline
             \textit{\textbf{i}}     & 0          & 1          & 2          & 3         & 4        & 5       & 6      & 7     & 8   & 9 \\ \hline
@@ -126,6 +132,7 @@ We can use Python or other numeric computing methods to calculate such formula.
     }
 \end{table}
 
+% 1.5
 \paragraph{1.5}
 Let E,F,G be three events. Find expressions for the events that of E, G, F
 \begin{itemize}
@@ -141,7 +148,7 @@ Let E,F,G be three events. Find expressions for the events that of E, G, F
 
 \noindent \textit{\textbf{Notation}: Given a set $U$, $B$ is complement of $A$ in U, written $B = A \setminus U = A^C = U - A$.}
 
-\solution
+\begin{solution}
 
 For two events $A, B$, there are:
 
@@ -163,3 +170,96 @@ For two events $A, B$, there are:
 \end{itemize}
 
 \textit{\textbf{Note}: There are relationships between problem (c, d, e) \& problem (f, g, h).}
+
+\end{solution}
+
+% 1.6
+\paragraph{1.6}
+Express the following events in the simplest form.
+\begin{itemize}
+    \item[(a)] $(A\cup B)\cap (B\cup C)$,
+    \item[(b)] $(A\cup B)\cap (A\cup \overline{B})$,
+    \item[(c)] $(A\cup B)\cap (A\cup \overline{B})\cap (\overline{A}\cup B)$.
+\end{itemize}
+
+\begin{solution}
+
+\textit{\textbf{Note}: Some discrete mathematics knowledge will be helpful.\cite{ISBN9781259676512}}
+
+(a)
+
+\begin{equation*}
+    (A\cup B)\cap (B\cup C)\iff (A\cap C)\cup B\iff (AC)\cup B\\
+\end{equation*}
+
+(b)
+
+\begin{align*}
+    & (A\cup B)\cap (A\cup \overline{B})\\
+    \iff & A\cup (B\cap \overline{B})\\
+    \iff & A\cup \varnothing\\
+    \iff & A\\
+\end{align*}
+
+(c) From (b) we have:
+
+\begin{align*}
+    & (A\cup B)\cap (A\cup \overline{B})\cap (\overline{A}\cup B)\\
+    \iff & A\cap (\overline{A}\cup B)\\
+    \iff & A\cap B\iff AB\\
+\end{align*}
+
+\end{solution}
+
+% 1.7
+\paragraph{1.7}
+Suppose that a coin is tossed ten times. Let $A$ obtain the event that a head is obtained on the first toss, and let $B$ denote the event that a head is obtained on the sixth toss. Are $A$ and $B$ disjoint?
+
+\begin{solution}
+
+No, they are not disjoint for they can probably occur at the same time.
+
+\end{solution}
+
+\subsection{Probabilities Defined On Events}
+
+% 1.8
+\paragraph{1.8}
+A box contains three marbles: one red, one green and one blue. Consider an experiment that consists of taking one marble from the box then replacing it in the box and drawing a second marble from the box. What is the sample space? If, at all times, each marble in the box is equally likely to be selected, what is the probability of each point in the sample space?
+
+\begin{solution}
+
+All steps are independent.
+
+Sample space $\Omega = \{(r,r), (r,g), (r,b), (g,r), (g,g), (g,b), (b,r), (b,g), (b,b)\}$.
+
+For each step $P(r) = P(g) = P(b) = \frac{1}{3}$.
+
+Thus, $\forall(x, y)\in \{(x,y):x, y\in\{r, g, b\}\}$, there is:
+
+\begin{equation*}
+    P[(x, y)] = P(xy) = P(x)P(y) = \frac{1}{9}
+\end{equation*}
+
+\end{solution}
+
+% 1.9
+% \paragraph{1.9}
+% You roll two dice. What are the probability of the events:
+
+% \begin{itemize}
+%     \item[(a)] They show the same?
+%     \item[(b)] Their sum is seven or eleven?
+%     \item[(c)] They have no common factor greater than unity? (\textit{unity} stands for number \textit{one})
+%     \item[(d)] The sum of the numbers is 2, 3 or 12?
+%     \item[(e)] The sum is odd?
+%     \item[(f)] The difference is odd?
+%     \item[(g)] The product is odd?
+%     \item[(h)] One number divides the other?
+%     \item[(i)] The first die shows a smaller number than the second?
+%     \item[(j)] Different numbers are shown and the smaller of the two number is $r$, $1\leq r\leq 6$.
+% \end{itemize}
+
+% \begin{solution}
+
+% \end{solution}
