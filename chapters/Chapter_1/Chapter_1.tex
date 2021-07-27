@@ -244,22 +244,58 @@ Thus, $\forall(x, y)\in \{(x,y):x, y\in\{r, g, b\}\}$, there is:
 \end{solution}
 
 % 1.9
-% \paragraph{1.9}
-% You roll two dice. What are the probability of the events:
+\paragraph{1.9}
+You roll two dice. What are the probability of the events:
 
-% \begin{itemize}
-%     \item[(a)] They show the same?
-%     \item[(b)] Their sum is seven or eleven?
-%     \item[(c)] They have no common factor greater than unity? (\textit{unity} stands for number \textit{one})
-%     \item[(d)] The sum of the numbers is 2, 3 or 12?
-%     \item[(e)] The sum is odd?
-%     \item[(f)] The difference is odd?
-%     \item[(g)] The product is odd?
-%     \item[(h)] One number divides the other?
-%     \item[(i)] The first die shows a smaller number than the second?
-%     \item[(j)] Different numbers are shown and the smaller of the two number is $r$, $1\leq r\leq 6$.
-% \end{itemize}
+\begin{itemize}
+    \item[(a)] They show the same?
+    \item[(b)] Their sum is seven or eleven?
+    \item[(c)] They have no common factor greater than unity? (\textit{unity} stands for number \textit{one})
+    \item[(d)] The sum of the numbers is 2, 3 or 12?
+    \item[(e)] The sum is odd?
+    \item[(f)] The difference is odd?
+    \item[(g)] The product is odd?
+    \item[(h)] One number divides the other?
+    \item[(i)] The first die shows a smaller number than the second?
+    \item[(j)] Different numbers are shown and the smaller of the two number is $r$, $1\leq r\leq 6$.
+\end{itemize}
 
-% \begin{solution}
+\begin{solution}
+(a) $P=\frac{6}{36}=\frac{1}{6}$.
 
-% \end{solution}
+(b)
+
+For 11, the only possible results are $\{5, 6\}, \{6, 5\}$, so the answer is $P=\frac{2}{36}=\frac{1}{18}$.
+
+For 7, we have $C_{7-1}^{1}=6$, so the answer is $P=\frac{6}{36}=\frac{1}{6}$.
+
+(c)
+
+The two results are co-prime if and only if the circumstance is one of: $\{2, 4\}, \{4, 2\},$ $\{2, 6\}, \{6, 2\}, \{3, 6\}, \{6, 3\}, \{4, 6\}, \{6, 4\}$. Hence the answer is $P=\frac{8}{36}=\frac{2}{9}$.
+
+(d)
+
+The required results are: $\{1, 1\}, \{1, 2\}, \{2, 1\}, \{6, 6\}$. Hence the answer is $P=\frac{4}{36}=\frac{1}{9}$.
+
+(e)
+
+The sum is odd if and only if one result is odd while the other is even. Therefore e have $P=\frac{C_{3}^{1}C_{3}^{1}+C_{3}^{1}C_{3}^{1}}{36}=\frac{1}{2}$.
+
+(f)
+
+It is obvious that the two results can be represented as $x$ and $x+\delta$. Since $2x$ is even and $\delta$ is odd, their sum $2x+\delta$ is odd. Similarly, if the difference is even, their sum is even. Thus, (f) $\iff$ (e) and the answer is the same $P=\frac{1}{2}$.
+
+(g)
+
+The product is odd if and only if all results are odd. Hence we have $P=\frac{C_{3}^{1}C_{3}^{1}}{36}=\frac{1}{4}$.
+
+(h)
+
+One number divides the other if and only if the circumstance is one of: $\{2, 4\}, \{4, 2\},$ $\{2, 6\}, \{6, 2\}, \{3, 6\}, \{6, 3\}$. Hence the answer is $P=\frac{6}{36}=\frac{1}{6}$.
+
+(i)$P=\frac{1}{36}\Sigma_{i=1}^{6}i-1=\frac{5}{12}$.
+
+(j)
+
+$P=\frac{2(6-r)C_{6}^{1}}{36}=\frac{6-r}{3}$.
+\end{solution}
